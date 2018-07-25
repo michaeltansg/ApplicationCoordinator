@@ -1,4 +1,14 @@
 language: swift
 osx_image: xcode9.4
 
+env:
+  # environment variables
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+    
+# before_install:
+#   - gem update --system
+#   - gem install fastlane --no-rdoc --no-ri --no-document --quiet
+
 script: fastlane ios coverage
