@@ -1,9 +1,6 @@
 ### Build status:
 
-![travis-ci](https://travis-ci.org/michaeltansg/ApplicationCoordinator.svg?branch=master)
-
 [![Travis (.org)](https://img.shields.io/travis/michaeltansg/ApplicationCoordinator.svg)](https://github.com/michaeltansg/ApplicationCoordinator)
-
 [![Coveralls github](https://img.shields.io/coveralls/github/jekyll/jekyll.svg)](https://github.com/michaeltansg/ApplicationCoordinator)
 
 # ApplicationCoordinator
