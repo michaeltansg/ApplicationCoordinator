@@ -1,7 +1,7 @@
 ### Build status:
 
 [![Travis (.org)](https://img.shields.io/travis/michaeltansg/ApplicationCoordinator.svg)](https://github.com/michaeltansg/ApplicationCoordinator)
-[![Coveralls github](https://img.shields.io/coveralls/github/jekyll/jekyll.svg)](https://github.com/michaeltansg/ApplicationCoordinator)
+[![Coverage Status](https://coveralls.io/repos/github/michaeltansg/ApplicationCoordinator/badge.svg?branch=master)](https://coveralls.io/github/michaeltansg/ApplicationCoordinator?branch=master)
 
 # ApplicationCoordinator
 A lot of developers need to change navigation flow frequently, because it depends on business tasks. And they spend a huge amount of time for re-writing code. In this approach, I demonstrate our implementation of Coordinators, the creation of a protocol-oriented, testable architecture written on pure Swift without the downcast and, also to avoid the violation of the S.O.L.I.D. principles.
