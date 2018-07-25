@@ -1,9 +1,4 @@
 language: swift
 osx_image: xcode9.4
 
-before_install:
-  - gem update --system
-  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
-
-script:
-  – fastlane ios coverage
+script: fastlane ios coverage
