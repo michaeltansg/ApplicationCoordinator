@@ -1,3 +1,11 @@
+### Build status:
+
+![travis-ci](https://travis-ci.org/michaeltansg/ApplicationCoordinator.svg?branch=master)
+
+[![Travis (.org)](https://img.shields.io/travis/michaeltansg/ApplicationCoordinator.svg)](https://github.com/michaeltansg/ApplicationCoordinator)
+
+[![Coveralls github](https://img.shields.io/coveralls/github/jekyll/jekyll.svg)](https://github.com/michaeltansg/ApplicationCoordinator)
+
 # ApplicationCoordinator
 A lot of developers need to change navigation flow frequently, because it depends on business tasks. And they spend a huge amount of time for re-writing code. In this approach, I demonstrate our implementation of Coordinators, the creation of a protocol-oriented, testable architecture written on pure Swift without the downcast and, also to avoid the violation of the S.O.L.I.D. principles.
 
@@ -32,7 +40,7 @@ In this example I use factories for creating  coordinators and controllers (we c
 protocol CoordinatorFactory {
     func makeItemCoordinator(navController navController: UINavigationController?) -> Coordinator
     func makeItemCoordinator() -> Coordinator
-    
+
     func makeItemCreationCoordinatorBox(navController: UINavigationController?) ->
         (configurator: Coordinator & ItemCreateCoordinatorOutput,
         toPresent: Presentable?)
@@ -41,27 +49,27 @@ protocol CoordinatorFactory {
 The base coordinator stores dependencies of child coordinators
 ```swift
 class BaseCoordinator: Coordinator {
-    
+
     var childCoordinators: [Coordinator] = []
 
     func start() { }
     func start(with option: DeepLinkOption?) { }
-    
+
     // add only unique object
     func addDependency(_ coordinator: Coordinator) {
-        
+
         for element in childCoordinators {
             if element === coordinator { return }
         }
         childCoordinators.append(coordinator)
     }
-    
+
     func removeDependency(_ coordinator: Coordinator?) {
         guard
             childCoordinators.isEmpty == false,
             let coordinator = coordinator
             else { return }
-        
+
         for (index, element) in childCoordinators.enumerated() {
             if element === coordinator {
                 childCoordinators.remove(at: index)
@@ -76,9 +84,9 @@ AppDelegate store lazy reference for the Application Coordinator
 var rootController: UINavigationController {
     return self.window!.rootViewController as! UINavigationController
   }
-  
+
   private lazy var applicationCoordinator: Coordinator = self.makeCoordinator()
-  
+
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
@@ -86,7 +94,7 @@ var rootController: UINavigationController {
     applicationCoordinator.start(with: deepLink)
     return true
   }
-  
+
   private func makeCoordinator() -> Coordinator {
       return ApplicationCoordinator(
         router: RouterImp(rootController: self.rootController),
