@@ -21,7 +21,7 @@ addons:
 
 script:
 - set -o pipefail
-- xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -sdk iphonesimulator -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO GCC_GENERATE_TEST_COVERAGE_FILES=YES test -derivedDataPath DerivedData | xcpretty
+- xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO GCC_GENERATE_TEST_COVERAGE_FILES=YES test -derivedDataPath DerivedData | xcpretty
 - xcrun llvm-cov show -instr-profile=$(find DerivedData -iname 'Coverage.profdata') DerivedData/Build/Products/Debug-iphonesimulator/ApplicationCoordinator.app/ApplicationCoordinator > DerivedData/Coverage.report
 # - fastlane ios coverage && sonar-scanner
 - sonar-scanner
