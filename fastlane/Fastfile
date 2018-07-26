@@ -18,22 +18,27 @@ default_platform(:ios)
 platform :ios do
   desc "Runs all the tests"
   lane :test do
+    derived_data_path = 'DerivedData'
+    clear_derived_data(derived_data_path: derived_data_path)
     scan(
       scheme: "ApplicationCoordinator",
+      derived_data_path: derived_data_path,
       code_coverage: true
     )
   end
 
   desc "Runs coverage"
   lane :coverage do
-    output_directory = 'fastlane/test_output'
     test
+    derived_data_path = 'DerivedData'
+    output_directory = 'fastlane/test_output'
     slather(
       travis: true,
       scheme: "ApplicationCoordinator",
       # coveralls: true, # coveralls
       cobertura_xml: true, # sonar scanner
       output_directory: output_directory, # required for cobertura_xml, defaults to project root
+      build_directory: derived_data_path,
       proj: "ApplicationCoordinator.xcodeproj"
     )
     # swiftlint(output_file: "#{output_directory}/swiftlint.txt", ignore_exit_status: true)
