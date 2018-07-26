@@ -11,4 +11,5 @@ env:
 #   - gem update --system
 #   - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
-script: fastlane ios coverage
+script: 
+  - fastlane ios coverage
