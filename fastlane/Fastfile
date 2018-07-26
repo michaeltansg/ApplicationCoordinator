@@ -31,7 +31,7 @@ platform :ios do
   lane :coverage do
     test
     derived_data_path = 'DerivedData'
-    output_directory = 'fastlane/test_output'
+    output_directory = './fastlane/test_output'
     slather(
       travis: true,
       scheme: "ApplicationCoordinator",
@@ -41,7 +41,7 @@ platform :ios do
       build_directory: derived_data_path,
       proj: "ApplicationCoordinator.xcodeproj"
     )
-    sh('cat fastlane/test_output/cobertura.xml')
+    sh('cat ./fastlane/test_output/cobertura.xml')
     # swiftlint(output_file: "#{output_directory}/swiftlint.txt", ignore_exit_status: true)
   end
 end
