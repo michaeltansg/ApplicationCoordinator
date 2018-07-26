@@ -40,10 +40,12 @@ platform :ios do
     project_key = 'ApplicationCoordinator'
     project_name = 'Application Coordinator'
     project_version = '1.0'
+    project_language = 'Swift'
     sonar(
       project_key: project_key,
       project_name: project_name,
       project_version: project_version,
+      project_language: project_language,
       sources_path: File.expand_path("../ApplicationCoordinator"),
       source_encoding: 'UTF-8',
       # sonar_runner_args: runner_arguments.join(' '),
