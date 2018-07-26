@@ -26,12 +26,14 @@ platform :ios do
 
   desc "Runs coverage"
   lane :coverage do
+    output_directory = 'fastlane/test_output'
     test
     slather(
       travis: true,
       scheme: "ApplicationCoordinator",
       # coveralls: true, # coveralls
       cobertura_xml: true, # sonar scanner
+      output_directory: output_directory, # required for cobertura_xml, defaults to project root
       proj: "ApplicationCoordinator.xcodeproj"
     )
   end
@@ -42,6 +44,18 @@ platform :ios do
     project_name = 'Application Coordinator'
     project_version = '1.0'
     project_language = 'swift'
+
+    runner_arguments = []
+    runner_arguments << map_sonar_url(options)
+    runner_arguments << '-Dsonar.password=""'
+    runner_arguments << '-Dsonar.verbose=true'
+    # runner_arguments << '-Dsonar.swift.swiftlint.report=fastlane/test_output/*swiftlint.txt'
+    runner_arguments << '-Dsonar.swift.coverage.reportPattern=fastlane/test_output/cobertura.xml'
+    # runner_arguments << '-Dsonar.swift.lizard.report=fastlane/test_output/lizard-report.xml'
+    runner_arguments << '-Dsonar.junit.reportsPath=fastlane/test_output/'
+    runner_arguments << '-Dsonar.junit.include=fastlane/test_output/*.junit'
+    # runner_arguments << '-Dsonar.coverage.exclusions=**/Models/**/*,**/External/**/*,**/Constants/**/*,**/Startup/**/*,**Store.swift'
+
     sonar(
       project_key: project_key,
       project_name: project_name,
@@ -49,7 +63,7 @@ platform :ios do
       project_language: project_language,
       sources_path: File.expand_path("../ApplicationCoordinator"),
       source_encoding: 'UTF-8',
-      # sonar_runner_args: runner_arguments.join(' '),
+      sonar_runner_args: runner_arguments.join(' '),
       sonar_login: ENV["SONAR_TOKEN"]
     )
   end
