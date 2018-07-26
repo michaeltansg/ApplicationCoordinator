@@ -1,6 +1,6 @@
 ### Project status:
 
-[![Build Status](https://api.travis-ci.org/michaeltansg/ApplicationCoordinator.svg?branch=master)](https://travis-ci.org/michaeltansg/ApplicationCoordinator)
+[![Build Status](https://api.travis-ci.com/michaeltansg/ApplicationCoordinator.svg?branch=master)](https://travis-ci.com/michaeltansg/ApplicationCoordinator)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=ApplicationCoordinator&metric=alert_status)](https://sonarcloud.io/dashboard?id=ApplicationCoordinator)
 <!-- [![Coverage Status](https://coveralls.io/repos/github/michaeltansg/ApplicationCoordinator/badge.svg?branch=master)](https://coveralls.io/github/michaeltansg/ApplicationCoordinator?branch=master) -->
 
