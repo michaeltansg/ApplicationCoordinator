@@ -46,7 +46,7 @@ platform :ios do
     project_language = 'swift'
 
     runner_arguments = []
-    runner_arguments << map_sonar_url(options)
+    # runner_arguments << map_sonar_url(options)
     runner_arguments << '-Dsonar.password=""'
     runner_arguments << '-Dsonar.verbose=true'
     # runner_arguments << '-Dsonar.swift.swiftlint.report=fastlane/test_output/*swiftlint.txt'
