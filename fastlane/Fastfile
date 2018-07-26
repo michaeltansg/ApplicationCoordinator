@@ -40,7 +40,7 @@ platform :ios do
     project_key = 'ApplicationCoordinator'
     project_name = 'Application Coordinator'
     project_version = '1.0'
-    project_language = 'Swift'
+    project_language = 'swift'
     sonar(
       project_key: project_key,
       project_name: project_name,
