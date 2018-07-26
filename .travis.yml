@@ -19,4 +19,5 @@ addons:
 
 script:
   - fastlane ios coverage
-  - sonar-scanner
+  - fastlane ios sonar
+# - sonar-scanner

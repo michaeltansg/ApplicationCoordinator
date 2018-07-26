@@ -34,4 +34,20 @@ platform :ios do
       proj: "ApplicationCoordinator.xcodeproj"
     )
   end
+
+  desc "Sonar scan"
+  lane :sonar do
+    UI.important 'Displaying token [Begin]'
+    UI.important ENV["SONAR_TOKEN"]
+    UI.important 'Displaying token [End]'
+    # sonar(
+    #   project_key: project_key,
+    #   project_name: project_name,
+    #   project_version: project_version,
+    #   sources_path: File.expand_path("../SCB-FastEasy"),
+    #   source_encoding: 'UTF-8',
+    #   sonar_runner_args: runner_arguments.join(' '),
+    #   sonar_login: login_token
+    # )
+  end
 end
