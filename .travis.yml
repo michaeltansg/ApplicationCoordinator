@@ -10,8 +10,6 @@ env:
 addons:
   sonarcloud:
     organization: michaeltansg-github
-    token:
-      secure: "WGAo4tsftWQEGLKW6WlHEOxuEc6HUW0JBe53+lOqNz+PnrDnQ9K8RAeKCwjkMxN6oHJoYBa9tgl0klYyFFM9/xAaqCPtIeJ38iOqMU8JMT2mBY4yMmGScOLn064U89rlrUHeS3tKq2wL7QzXe7JB+vWv2HHpm1nnMVMt2vO/AKlgA4e44WJacMspUE+0JbIJn+ljgDCD76WWNuTgalDkpjltytk0TaCNi6x5IEJYiEwHFVAw0067WWMnTvJGaG2OmbnPhy5yA0vhNk/iauNMqUMbEHX9owt3pUwXHkQ0OHww9sRI48Kr5ZeTr2piDaIPLLx8WwRv0zhPA5PBVcec+ne1RS1ElzqgJ8Q5+MA7YZNawog88Sb1lvGk118QnN8x350t6He1bTBJIpdQozqFGX/n229OR2CPWj/loQ2lUZH3deu1Jc/p2Y0dlNgVShuS9Oh/aUCnrMSooL1aHuC0DFzDyE24y8BBbLVmkvTZu6ZT7TxSEa6gvDSzqrrWNoN9VDbGuahCW36rFx9n+Jph6PQ/ecI9/joJwBEZIpKhMyuoqZBA51gpEgYOey2hucPx+xjB71bUIScLwmDUthu5ejfzE/ReBMHsCs2CHsXyRpAnzxkud8jEa9PcNUQhD/fhj9MFZn14Qa/cVj/8gryeqnr/IcWmtN2nCFUXFjXd318="
 
 #before_install:
 #  - brew update
