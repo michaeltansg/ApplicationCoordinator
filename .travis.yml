@@ -1,23 +1,25 @@
 language: swift
 osx_image: xcode9.4
 
+# environment variables
 env:
-  # environment variables
   global:
-    - LANG=en_US.UTF-8
-    - LC_ALL=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - LC_ALL=en_US.UTF-8
+  matrix:
+    secure: LW1U6HgTr4fPozJA+SegV1S8lAW7i0bxHRhHDu5DzhBrduftkPt8DnD1hUJ1qlAAPJ6vRCKdiawcQNAYMEe43fKnmm4ZSqN0aT5pozkJ7ijXQNgHEwE1p0BUUObEADmR3TK+w+zHsTHneqHXZzDM7BCHyaAYk55ACVpWpGpQ34aR2pvB7h+mnlUoz0KDMPUL3VNNFDHpE7O59tb0sVFxa2YfIeWHQAxKGy4K/vW/xByTcMQpO91mwiZZQEKXzSgk1Gc8MYCj/IKo/LBZ1JPsp/F+iatdp8LaRH3GRkuE+TubtgQhQsv2HPePEmoSXj8AlN+47qoMMinotRxsgk5crv8smn68q7o3ctZAHcth3S8eCpfTJHLuORdRZ8HlcfEsT1LFAAWPEk079uLrrlW49nP40jnDhuGYV+sNlrEoTtfhqKSjPpmlRI/xmbNk63Zw+LhUrSP29FdVSoGIIlB+B+J/uVUE2AkF6cSZEaB3aeYK3Cpv8AG3sxK8/4qqIsTZt75Pn849kwjgz0N1eL/hBhqAwl1/aqutcwcpxguVL2KEwdmAmhbBzKBOmCG58tmLO0WqsgP9ALwt2lols37ztSRYHY/8ooHGNfDqO91b3ulMH4oQYEESUIuD3rP9hDoLVVnjDuhByjtrhagpgty+mYU5u1nwyI89Y3lj9RdNLnI=
 
 addons:
   sonarcloud:
-    organization: "michaeltansg-github"
-    token:
-      secure: "aUiPy6xRoP4aCNNJdG9bw1CMXYmLk8YjE4BQk3pn4AfY2xWWJQav1FC6N2+wZ1fe0e8jHXi8wxh2ddrnXnGu1U0d4MqzQ2vJf/OobtoXKZXupLxr19dC3m749J4YL4qC+xRdHrmTk7EC0ygeX9ncG4KJlImk2q03sWDsFsz7vvSmFhXiIp2sIr1H9R7bT6k/Xw7KhD++GDS4P2pZVln/Cd3k3+oeHzBvCpIgxz6dwvV5B0l4r+dRtbuQDARpnbz6t25THnquewFkGQW+zT7G0DCKvgOAcXStRObrv7wnYPJaivA5hf5q0n6dRQlBSR2YrBfSa7j3xZw/l2II44ouKIrp35Ew3LT7DIaPBTJknO02ObE/poy4Te6bFZs1ix48bOfh8HPfCMj8NqQzsRvMcVq0ntE45TLwVlyDKCEiKN4H/UAVBoXuDErKYobQBvIUFo/TM+AG17ZL5WpMOqvME+3c7jM9wb1kcP3rpgmQ7viiMvFHR6jEXz7qTPCRS9G2j3LzhoWUFdCOLgiASkw7YzFZ7PZ/DMK7B/te3SbZyLlQkDJDXgiPkot2brOwDLxtqawCArD4UKV6lnqRLxWjtTNsNVzplHEput8X5c6lu8Asb8A7BlVw46+EwjtFYSDCa6ckguwHTtf90X8J8YSaZSC5n4T22GJjTHcmprdR1Og="
+    organization: michaeltansg-github
+    # token:
+    #   secure: "aUiPy6xRoP4aCNNJdG9bw1CMXYmLk8YjE4BQk3pn4AfY2xWWJQav1FC6N2+wZ1fe0e8jHXi8wxh2ddrnXnGu1U0d4MqzQ2vJf/OobtoXKZXupLxr19dC3m749J4YL4qC+xRdHrmTk7EC0ygeX9ncG4KJlImk2q03sWDsFsz7vvSmFhXiIp2sIr1H9R7bT6k/Xw7KhD++GDS4P2pZVln/Cd3k3+oeHzBvCpIgxz6dwvV5B0l4r+dRtbuQDARpnbz6t25THnquewFkGQW+zT7G0DCKvgOAcXStRObrv7wnYPJaivA5hf5q0n6dRQlBSR2YrBfSa7j3xZw/l2II44ouKIrp35Ew3LT7DIaPBTJknO02ObE/poy4Te6bFZs1ix48bOfh8HPfCMj8NqQzsRvMcVq0ntE45TLwVlyDKCEiKN4H/UAVBoXuDErKYobQBvIUFo/TM+AG17ZL5WpMOqvME+3c7jM9wb1kcP3rpgmQ7viiMvFHR6jEXz7qTPCRS9G2j3LzhoWUFdCOLgiASkw7YzFZ7PZ/DMK7B/te3SbZyLlQkDJDXgiPkot2brOwDLxtqawCArD4UKV6lnqRLxWjtTNsNVzplHEput8X5c6lu8Asb8A7BlVw46+EwjtFYSDCa6ckguwHTtf90X8J8YSaZSC5n4T22GJjTHcmprdR1Og="
 
 # before_install:
 #   - gem update --system
 #   - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
 script:
-  - fastlane ios coverage
-  - fastlane ios sonar
+- fastlane ios coverage
+- fastlane ios sonar_scan
 # - sonar-scanner

@@ -37,17 +37,17 @@ platform :ios do
 
   desc "Sonar scan"
   lane :sonar do
-    UI.important 'Displaying token [Begin]'
-    UI.important ENV["SONAR_TOKEN"]
-    UI.important 'Displaying token [End]'
-    # sonar(
-    #   project_key: project_key,
-    #   project_name: project_name,
-    #   project_version: project_version,
-    #   sources_path: File.expand_path("../SCB-FastEasy"),
-    #   source_encoding: 'UTF-8',
-    #   sonar_runner_args: runner_arguments.join(' '),
-    #   sonar_login: login_token
-    # )
+    project_key = 'ApplicationCoordinator'
+    project_name = 'Application Coordinator'
+    project_version = '1.0'
+    sonar(
+      project_key: project_key,
+      project_name: project_name,
+      project_version: project_version,
+      sources_path: File.expand_path("../ApplicationCoordinator"),
+      source_encoding: 'UTF-8',
+      # sonar_runner_args: runner_arguments.join(' '),
+      sonar_login: ENV["SONAR_TOKEN"]
+    )
   end
 end
