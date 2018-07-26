@@ -41,6 +41,7 @@ platform :ios do
       build_directory: derived_data_path,
       proj: "ApplicationCoordinator.xcodeproj"
     )
+    sh('cat fastlane/test_output/cobertura.xml')
     # swiftlint(output_file: "#{output_directory}/swiftlint.txt", ignore_exit_status: true)
   end
 end
