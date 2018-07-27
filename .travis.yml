@@ -22,8 +22,7 @@ addons:
 script:
 - set -o pipefail
 - xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -derivedDataPath DerivedData -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES clean build test | xcpretty
-# - xcrun llvm-cov show -instr-profile=$(find DerivedData -iname 'Coverage.profdata') $(find DerivedData -path "*ApplicationCoordinator.app/ApplicationCoordinator") > DerivedData/Coverage.report
-- sh xccov-to-sonarqube-generic.sh $(find DerivedData -iname '*.xccovarchive') > DerivedData/sonarqube-generic-coverage.xml
+- xcrun llvm-cov show -instr-profile=$(find DerivedData -iname 'Coverage.profdata') $(find DerivedData -path "*ApplicationCoordinator.app/ApplicationCoordinator") > DerivedData/Coverage.report
 # - fastlane ios coverage && sonar-scanner
 - sonar-scanner
 
