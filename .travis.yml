@@ -18,20 +18,15 @@ addons:
 #  - carthage bootstrap --verbose --no-use-binaries --platform iOS,tvOS,watchOS --cache-builds
 #  - gem update --system
 #  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
-jobs:
-  include:
-    - stage: Test
-      script:
-      - fastlane ios test
-      # - set -o pipefail
-      # - xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -derivedDataPath DerivedData -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES clean build test | xcpretty
 
-    - stage: Report Coverage
-      # - xcrun llvm-cov show -instr-profile=$(find DerivedData -iname 'Coverage.profdata') $(find DerivedData -path "*ApplicationCoordinator.app/ApplicationCoordinator") > DerivedData/Coverage.report
-      script:
-      - sh xccov-to-sonarqube-generic.sh $(find DerivedData -iname '*.xccovarchive') > DerivedData/sonarqube-generic-coverage.xml
-      # - fastlane ios coverage && sonar-scanner
-      - sonar-scanner
+script:
+- fastlane ios test
+# - set -o pipefail
+# - xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -derivedDataPath DerivedData -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES clean build test | xcpretty
+# - xcrun llvm-cov show -instr-profile=$(find DerivedData -iname 'Coverage.profdata') $(find DerivedData -path "*ApplicationCoordinator.app/ApplicationCoordinator") > DerivedData/Coverage.report
+- sh xccov-to-sonarqube-generic.sh $(find DerivedData -iname '*.xccovarchive') > DerivedData/sonarqube-generic-coverage.xml
+# - fastlane ios coverage && sonar-scanner
+- sonar-scanner
 
 # after_success:
 # - bash <(curl -s https://codecov.io/bash)
