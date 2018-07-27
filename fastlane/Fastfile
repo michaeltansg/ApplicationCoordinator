@@ -23,6 +23,7 @@ platform :ios do
     scan(
       scheme: "ApplicationCoordinator",
       derived_data_path: derived_data_path,
+      clean: true,
       code_coverage: true
     )
   end
