@@ -21,6 +21,7 @@ addons:
 #  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
 script:
+- open -b com.apple.iphonesimulator
 - fastlane ios test
 # - set -o pipefail
 # - xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -derivedDataPath DerivedData -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES clean build test | xcpretty
