@@ -13,8 +13,8 @@ addons:
     organization: michaeltansg-github
 
 before_install:
-- brew update
-- brew upgrade swiftlint
+# - brew update
+# - brew upgrade swiftlint
 #  - brew outdated carthage || brew upgrade carthage
 #  - carthage bootstrap --verbose --no-use-binaries --platform iOS,tvOS,watchOS --cache-builds
 #  - gem update --system
