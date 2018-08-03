@@ -1,0 +1,30 @@
+<testExecutions version="1">
+  <file path="ApplicationCoordinatorTests.AuthCoordinatorTest">
+    <testCase name="testShowSignUp" duration="0.122"/>
+    <testCase name="testShowTerms" duration="0.008"/>
+    <testCase name="testStart" duration="0.008"/>
+  </file>
+  <file path="ApplicationCoordinatorTests.BaseCoordinatorTest">
+    <testCase name="testCoordinatorAddDependency" duration="">
+      <failure message="XCTAssertTrue failed - ">ApplicationCoordinatorTests/Parent/BaseCoordinatorTest.swift:35</failure>
+      <failure message="XCTAssertTrue failed - Only unique reference could be added">ApplicationCoordinatorTests/Parent/BaseCoordinatorTest.swift:37</failure>
+    </testCase>
+    <testcase name="testCoordinatorArrayInitializedOfEmptyArray" duration="0.001"/>
+    <testcase name="testCoordinatorRemoveDependency" duration="0.005"/>
+  </file>
+  <file path="ApplicationCoordinatorTests.ItemCoordinatorTest">
+    <testcase name="testShowItemDetail" duration="0.013"/>
+    <testcase name="testStart" duration="0.003"/>
+  </file>
+  <file path="ApplicationCoordinatorTests.RouterTest">
+    <testcase name="testDismissViewModule" duration="0.005"/>
+    <testcase name="testPresentViewModule" duration="0.003"/>
+    <testcase name="testRouterPopToRootViewModule" duration="0.004"/>
+    <testcase name="testRouterPopViewModule" duration="0.005"/>
+    <testcase name="testRouterPushViewModule" duration="0.003"/>
+    <testcase name="testRouterSetRootModule" duration="0.004"/>
+  </file>
+  <file path="ApplicationCoordinatorTests.SettingsCoordinatorTest">
+    <testcase name="testStart" duration="0.002"/>
+  </file>
+</testExecutions>
