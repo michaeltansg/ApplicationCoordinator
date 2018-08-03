@@ -18,14 +18,7 @@ default_platform(:ios)
 platform :ios do
   desc "Runs all the tests"
   lane :test do
-    derived_data_path = 'DerivedData'
-    clear_derived_data(derived_data_path: derived_data_path)
-    scan(
-      scheme: "ApplicationCoordinator",
-      derived_data_path: derived_data_path,
-      clean: true,
-      code_coverage: true
-    )
+    scan
   end
 
   desc "Runs coverage"

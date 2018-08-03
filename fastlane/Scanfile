@@ -4,7 +4,9 @@
 # In general, you can use the options available
 # fastlane scan --help
 
-# Enable skip_build to skip debug builds for faster test performance
-skip_build(true)
-
+scheme "ApplicationCoordinator"
+derived_data_path "DerivedData"
+clean true
+code_coverage true
+skip_build true # Enable skip_build to skip debug builds for faster test performance
 devices ["iPhone X"]
