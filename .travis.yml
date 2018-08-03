@@ -21,11 +21,11 @@ before_install:
 #  - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
 script:
-- swiftlint
+#- swiftlint
 #- open -a $(xcode-select -p | grep -oE '.*.app')/Contents/Developer/Applications/Simulator.app --args -CurrentDeviceUDID $(xcrun instruments -s | ruby -e 'puts ARGF.read.split("\n").map{ |i| i.scan(/^iPhone X \(.*\) \[(.*)\] \(Simulator\)$/) }.flatten.first')
 #- $(xcode-select -p | grep -oE '.*.app')
 #- open -a Simulator --args -CurrentDeviceUDID $(xcrun instruments -s | ruby -e 'puts ARGF.read.split("\n").map{ |i| i.scan(/^iPhone 6 \(.*\) \[(.*)\] \(Simulator\)$/) }.flatten.first')
-- fastlane ios test
+- fastlane scan
 # - set -o pipefail
 # - xcodebuild -project ApplicationCoordinator.xcodeproj -scheme ApplicationCoordinator -derivedDataPath DerivedData -destination 'platform=iOS Simulator,name=iPhone X' -enableCodeCoverage YES clean build test | xcpretty
 # - xcrun llvm-cov show -instr-profile=$(find DerivedData -iname 'Coverage.profdata') $(find DerivedData -path "*ApplicationCoordinator.app/ApplicationCoordinator") > DerivedData/Coverage.report
