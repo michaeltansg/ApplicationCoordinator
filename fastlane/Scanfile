@@ -12,5 +12,6 @@ skip_build true # Enable skip_build to skip debug builds for faster test perform
 devices ["iPhone X"]
 output_directory "DerivedData"
 output_types "junit,html"
+# skip_testing ["ApplicationCoordinatorTests/RouterTest/testRouterPushViewModule"]
 # should_zip_build_products true
 # fail_build false
